@@ -1,3 +1,5 @@
+
+const csv = require('csv-parser');
 var http = require('http');
 var connect = require('connect');
 var serveStatic = require('serve-static');
@@ -5,6 +7,21 @@ var express = require('express')
 var fs = require('fs')
 var app = express()
 var path = require('path');
+const createCsvWriter = require('csv-writer').createObjectCsvWriter;
+var csvWriter = createCsvWriter({
+    path: 'out.csv',
+    header: [
+        { id: 'name', title: 'name' },
+        { id: 'filling', title: 'filling' },
+        { id: 'Dishtype', title: 'Dishtype' },
+        { id: 'DishNoodle', title: 'DishNoodle' },
+        { id: 'DishCurry', title: 'DishCurry' },
+        { id: 'DishStirfry', title: 'DishStirfry' },
+        { id: 'drink', title: 'drink' },
+        { id: 'message', title: 'message' },
+
+    ]
+});
 
 var bodyParser = require('body-parser');
 
@@ -15,6 +32,8 @@ app.use(bodyParser.urlencoded({
 
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/'));
+
+
 
 app.post('/order', function (req, res) {
     let date_ob = new Date();
@@ -27,13 +46,16 @@ app.post('/order', function (req, res) {
     let minutes = date_ob.getMinutes();
     // current seconds
     let seconds = date_ob.getSeconds();
-
+    var jsonObject = JSON.stringify(req.body);
+    console.log(jsonObject)
 
     console.log('Order Recieved')
-    console.log( hours + ":" + minutes + ":" + seconds  + "  " + date + "-" + month + "-" +  year);
+    console.log(hours + ":" + minutes + ":" + seconds + "  " + date + "-" + month + "-" + year);
     console.log(req.body)
+    csvWriter
+        .writeRecords(req.body)
+        .then(() => console.log('The CSV file was written successfully'));
 
-    
     /////////
     res.writeHead(301, { Location: '/OrderPlaced.html' });
     res.end();
