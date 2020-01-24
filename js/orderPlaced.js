@@ -15,8 +15,10 @@ function onLoad() {
 }
 
 function addBorder() {
-
+    document.getElementById("close").style.border = 'solid';
     document.getElementById("close").style.borderColor = 'lightgray';
+    document.getElementById("close").style.borderWidth = '1px';
+
 }
 
 

@@ -5,8 +5,8 @@ function changeDish() {
         document.getElementById("noodle").style.display = "block";
         document.getElementById("curry").style.display = "none";
         document.getElementById("stirfry").style.display = "none";
-        document.getElementById("noodle").style.animationName = "wobble";
-        document.getElementById("noodle").style.animationDuration = "0.75s";
+        document.getElementById("noodle").style.animationName = "fadeIn";
+        document.getElementById("noodle").style.animationDuration = "1s";
         document.getElementById("stirfry").disabled = "disabled";
         document.getElementById("noodle").disabled = "enabled";
         document.getElementById("curry").disabled = "disabled";
@@ -19,8 +19,8 @@ function changeDish() {
         document.getElementById("stirfry").disabled = "disabled";
         document.getElementById("noodle").disabled = "disabled";
         document.getElementById("curry").disabled = "enabled";
-        document.getElementById("curry").style.animationName = "rubberBand";
-        document.getElementById("curry").style.animationDuration = "0.75s";
+        document.getElementById("curry").style.animationName = "fadeIn";
+        document.getElementById("curry").style.animationDuration = "1s";
     }
     if (x.value == "StirFry") {
         document.getElementById("curry").style.display = "none";
@@ -29,8 +29,8 @@ function changeDish() {
         document.getElementById("stirfry").disabled = "enabled";
         document.getElementById("noodle").disabled = "disabled";
         document.getElementById("curry").disabled = "disabled";
-        document.getElementById("stirfry").style.animationName = "rollIn";
-        document.getElementById("stirfry").style.animationDuration = "0.75s";
+        document.getElementById("stirfry").style.animationName = "fadeIn";
+        document.getElementById("stirfry").style.animationDuration = "1s";
     }
 }
 
@@ -71,7 +71,7 @@ function onLoad() {
     [ Validate ]*/
     var name = $('.validate-input input[name="name"]');
     var email = $('.validate-input input[name="email"]');
-    var message = $('.validate-input textarea[name="message"]');
+    var filling = $('.validate-input select[name="filling"]');
     var drink = $('.validate-input select[name="drink"]');
 
 
@@ -87,6 +87,7 @@ function onLoad() {
             check = false;
         }
         if (check) {
+            document.body.style.overflowY = 'hidden';
             document.getElementById("formContainer").style.animationName = "fadeOutDown";
             document.getElementById("formContainer").style.animationDuration = "2s";
         }
