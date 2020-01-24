@@ -52,10 +52,17 @@ app.post('/order', function (req, res) {
     console.log('Order Recieved')
     console.log(hours + ":" + minutes + ":" + seconds + "  " + date + "-" + month + "-" + year);
     console.log(req.body)
-    csvWriter
-        .writeRecords(req.body)
-        .then(() => console.log('The CSV file was written successfully'));
+    fs.writeFile("C:/Scipty bois/ContactFrom_v4/output",JSON.stringify(req.body), function(err) {
+        if(err) {
+            return console.log(err);
+        }
+        console.log("The file was saved!");
+    }); 
 
+    csvWriter
+  .writeRecords(JSON.stringify(req.body))
+  .then(()=> console.log('The CSV file was written successfully'));
+    
     /////////
     res.writeHead(301, { Location: '/OrderPlaced.html' });
     res.end();
