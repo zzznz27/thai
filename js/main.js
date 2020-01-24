@@ -37,7 +37,7 @@ function changeDish() {
 function onLoad() {
     document.getElementById("formContainer").style.display = "block";
     document.getElementById("formContainer").style.animationName = "fadeInDown";
-    document.getElementById("formContainer").style.animationDuration = "3s";
+    document.getElementById("formContainer").style.animationDuration = "2s";
     document.getElementById("noodle").style.display = "none";
     document.getElementById("curry").style.display = "none";
     document.getElementById("stirfry").style.display = "none";
@@ -46,6 +46,8 @@ function onLoad() {
     document.getElementById("curry").disabled = "disabled";
 
 }
+
+
 
 (function ($) {
     "use strict";
@@ -84,6 +86,11 @@ function onLoad() {
             showValidate(drink);
             check = false;
         }
+        if (check) {
+            document.getElementById("formContainer").style.animationName = "fadeOutDown";
+            document.getElementById("formContainer").style.animationDuration = "2s";
+        }
+
         return check;
     });
 
