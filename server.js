@@ -33,7 +33,7 @@ app.post('/order', function (req, res) {
     console.log( hours + ":" + minutes + ":" + seconds  + "  " + date + "-" + month + "-" +  year);
     console.log(req.body)
 
-
+    
     /////////
     res.writeHead(301, { Location: '/OrderPlaced.html' });
     res.end();
