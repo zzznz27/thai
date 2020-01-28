@@ -8,6 +8,7 @@ var path = require('path');
 
 var bodyParser = require('body-parser');
 
+// USed to delay while awaiting animation to finish
 function sleep(ms) {
     return new Promise((resolve) => {
         setTimeout(resolve, ms);

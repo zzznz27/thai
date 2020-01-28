@@ -1,36 +1,43 @@
 function changeDish() {
     var x = document.getElementById("dish");
 
-    if (x.value == "Noodle") {
-        document.getElementById("noodle").style.display = "block";
-        document.getElementById("curry").style.display = "none";
-        document.getElementById("stirfry").style.display = "none";
-        document.getElementById("noodle").style.animationName = "fadeIn";
-        document.getElementById("noodle").style.animationDuration = "1s";
-        document.getElementById("stirfry").disabled = "disabled";
-        document.getElementById("noodle").disabled = "enabled";
-        document.getElementById("curry").disabled = "disabled";
+    switch (x.value) {
 
-    }
-    if (x.value == "Curry") {
-        document.getElementById("curry").style.display = "block";
-        document.getElementById("stirfry").style.display = "none";
-        document.getElementById("noodle").style.display = "none";
-        document.getElementById("stirfry").disabled = "disabled";
-        document.getElementById("noodle").disabled = "disabled";
-        document.getElementById("curry").disabled = "enabled";
-        document.getElementById("curry").style.animationName = "fadeIn";
-        document.getElementById("curry").style.animationDuration = "1s";
-    }
-    if (x.value == "StirFry") {
-        document.getElementById("curry").style.display = "none";
-        document.getElementById("stirfry").style.display = "block";
-        document.getElementById("noodle").style.display = "none";
-        document.getElementById("stirfry").disabled = "enabled";
-        document.getElementById("noodle").disabled = "disabled";
-        document.getElementById("curry").disabled = "disabled";
-        document.getElementById("stirfry").style.animationName = "fadeIn";
-        document.getElementById("stirfry").style.animationDuration = "1s";
+        case "Noodle": {
+            document.getElementById("noodle").style.display = "block";
+            document.getElementById("curry").style.display = "none";
+            document.getElementById("stirfry").style.display = "none";
+            document.getElementById("noodle").style.animationName = "fadeIn";
+            document.getElementById("noodle").style.animationDuration = "1s";
+
+            return;
+
+        }
+
+        case "Curry": {
+            document.getElementById("curry").style.display = "block";
+            document.getElementById("stirfry").style.display = "none";
+            document.getElementById("noodle").style.display = "none";
+            document.getElementById("curry").style.animationName = "fadeIn";
+            document.getElementById("curry").style.animationDuration = "1s";
+            return;
+        }
+
+
+        case "StirFry": {
+            document.getElementById("curry").style.display = "none";
+            document.getElementById("stirfry").style.display = "block";
+            document.getElementById("noodle").style.display = "none";
+            document.getElementById("stirfry").style.animationName = "fadeIn";
+            document.getElementById("stirfry").style.animationDuration = "1s";
+            return;
+        }
+
+        default: {
+            document.getElementById("curry").style.display = "none";
+            document.getElementById("stirfry").style.display = "none";
+            document.getElementById("noodle").style.display = "none";
+        }
     }
 }
 
@@ -41,9 +48,6 @@ function onLoad() {
     document.getElementById("noodle").style.display = "none";
     document.getElementById("curry").style.display = "none";
     document.getElementById("stirfry").style.display = "none";
-    document.getElementById("stirfry").disabled = "disabled";
-    document.getElementById("noodle").disabled = "disabled";
-    document.getElementById("curry").disabled = "disabled";
 
 }
 
