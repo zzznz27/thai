@@ -617,3 +617,20 @@ textarea.input100 {
   color: #333333;
   line-height: 1.2;
 }
+
+@keyframes slide-across {
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.favorite-container {
+
+  display: inline-block;
+  width: 0px;
+  height: 0px;
+  padding: 0px;
+  opacity: 0;
+  margin: 50px;
+
+}

@@ -1,9 +1,11 @@
 function onLoad() {
-    document.getElementById("orderContainer").style.display = "block";
 
+    document.getElementById("orderContainer").style.display = "block";
     document.getElementById("orderContainer").style.animationName = "bounceInDown";
     document.getElementById("orderContainer").style.animationDuration = "2s";
     document.getElementById("body").style.overflow = "hidden";
+
+
     // document.getElementById("orderContainer").style.animationDelay = "2s";
     // document.getElementById("orderContainer").style.animationName = "spin, depth";
     // document.getElementById("orderContainer").style.animationDuration = "3s";

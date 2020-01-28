@@ -51,7 +51,22 @@ function onLoad() {
 
 }
 
+function showFavourites() {
 
+    if (document.getElementById("favContainer").style.opacity == "0") {
+        document.getElementById("favContainer").style.transition = "all 1s";
+        document.getElementById("favContainer").style.opacity = "1";
+        document.getElementById("favContainer").style.width = "500px";
+        document.getElementById("favContainer").style.height = "100%";
+        document.getElementById("favContainer").style.padding = "42px 55px 45px 55px";
+    } else {
+        document.getElementById("favContainer").style.transition = "all 1s";
+        document.getElementById("favContainer").style.opacity = "0";
+        document.getElementById("favContainer").style.width = "0px";
+        document.getElementById("favContainer").style.height = "0%";
+        document.getElementById("favContainer").style.padding = "0px";
+    }
+}
 
 (function ($) {
     "use strict";
