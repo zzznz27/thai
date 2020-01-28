@@ -1,11 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Corben:700");
-h1 {
-  font-family: "Corben", cursive;
-  font-size: 6rem;
-  color: white;
-  letter-spacing: 0.1rem;
-  text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.66);
-}
+
+
 
 .hero {
   background-image: radial-gradient(50% 176%, #253854 80%, #061922 100%);
@@ -16,10 +11,10 @@ h1 {
   justify-content: center;
   align-content: center;
 }
+
 .hero__content {
   position: relative;
   align-self: center;
-  padding: 3rem 0;
 }
 
 .snow {
