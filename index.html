@@ -33,15 +33,19 @@
 
 
 	<div class="container-contact100">
-		<button style="position: absolute; top: 10px; left: 10px;" onclick="showFavourites()">Favourites</button>
+
 
 		<div class="wrap-contact100 " id="formContainer" style="display: none;">
 			<!-- Display set to none for animation -->
-
+			<button class="last" style=" font-size: small; float: right; width:auto;    margin-top: 0px;"
+				onclick="showFavourites()"><img src="/images/icons/arrow.png" style="width: 25px;height: 25px;"
+					alt="Previous orders"></button>
 			<form class="contact100-form validate-form" action="/order" method="POST" id="form">
+
 				<span class="contact100-form-title">
 					<h2>Thai Order Form</h2>
 				</span>
+
 
 				<div class="wrap-input100 validate-input" data-validate="Name is required">
 					<span class="label-input100">Your Name</span>
@@ -53,15 +57,15 @@
 					<div>
 						<select class="selection-2" name="filling">
 							<option>Select Option</option>
-							<option value="10" id="Vegetable">Vegetable</option>
-							<option value="10" id="Chicken">Chicken</option>
-							<option value="10" id="Beef">Beef</option>
-							<option value="13" id="Combination Chicken & Beef">Combination</option>
-							<option value="13" id="BBQ Pork">BBQ Pork</option>
-							<option value="13" id="Cripsy Pork">Cripsy Pork</option>
-							<option value="15" id="Duck">Duck</option>
-							<option value="15" id="Prawns">Prawns</option>
-							<option value="15" id="Seafood">Seafood</option>
+							<option id="Vegetable">Vegetable</option>
+							<option id="Chicken">Chicken</option>
+							<option id="Beef">Beef</option>
+							<option id="Combination Chicken & Beef">Combination</option>
+							<option id="BBQ Pork">BBQ Pork</option>
+							<option id="Cripsy Pork">Cripsy Pork</option>
+							<option id="Duck">Duck</option>
+							<option id="Prawns">Prawns</option>
+							<option id="Seafood">Seafood</option>
 						</select>
 					</div>
 					<span class="focus-input100"></span>
@@ -164,7 +168,12 @@
 
 		<!-- Favourites container  -->
 		<div class="wrap-contact100 favorite-container" id="favContainer">
-			<h3>Favourites</h3>
+			<h3>Last Order</h3>
+			<p id="order-list">
+
+
+			</p>
+			<button class=last onclick="loadCookie()">Load last</button>
 
 		</div>
 

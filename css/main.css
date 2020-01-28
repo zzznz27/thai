@@ -69,6 +69,8 @@ h4,
 h5,
 h6 {
   margin: 0px;
+  margin-bottom: 10px;
+  white-space: nowrap;
 }
 
 p {
@@ -632,5 +634,20 @@ textarea.input100 {
   padding: 0px;
   opacity: 0;
   margin: 50px;
+
+}
+
+.last {
+  padding: 10px;
+  border: 1px solid lightgray;
+  border-radius: 25px;
+  white-space: nowrap;
+  margin-top: 20px;
+  width: 100%;
+}
+
+td {
+  padding-right: 15px;
+  white-space: nowrap;
 
 }
