@@ -85,6 +85,21 @@ app.post('/order', function (req, res) {
 app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname + '/index.html'));
 });
+app.get('/list', function (req, res) {
+    var query = "SELECT * FROM orders"
+     con.query(query, function (err, result) {
+        if (err) throw err;
+        console.log( typeof result);
+        console.log("1 r");
+        //var myJSON = JSON.stringify(result);
+        res.send( result);
+      });
+      
+
+});
+app.post('/dates', function (req, res) {
+    console.log(req)
+});
 
 app.listen(8080, function () {
     console.log('Server running on 8080...');

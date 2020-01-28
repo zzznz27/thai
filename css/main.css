@@ -222,6 +222,13 @@ iframe {
   overflow: hidden;
   padding: 42px 55px 45px 55px;
 }
+.wrap-contact200 {
+  width: 1000px;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 42px 55px 45px 55px;
+}
 
 
 /*------------------------------------------------------------------
