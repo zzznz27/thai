@@ -10,6 +10,8 @@ function changeDish(){
         document.getElementById("stirfry").disabled = "disabled";
         document.getElementById("noodle").disabled = "enabled";
         document.getElementById("curry").disabled = "disabled";
+        document.getElementById("DishCurry").selectedIndex = 0;
+        document.getElementById("DishStirfry").selectedIndex = 0;
 
      }
      if(x.value == "Curry"){
@@ -19,6 +21,8 @@ function changeDish(){
         document.getElementById("stirfry").disabled = "disabled";
         document.getElementById("noodle").disabled = "disabled";
         document.getElementById("curry").disabled = "enabled";
+        document.getElementById("DishNoodle").selectedIndex = 0;
+        document.getElementById("DishStirfry").selectedIndex = 0;
      }
      if(x.value == "StirFry"){
         document.getElementById("curry").style.display = "none";
@@ -27,6 +31,8 @@ function changeDish(){
         document.getElementById("stirfry").disabled = "enabled";
         document.getElementById("noodle").disabled = "disabled";
         document.getElementById("curry").disabled = "disabled";
+        document.getElementById("DishCurry").selectedIndex = 0;
+        document.getElementById("DishNoodle").selectedIndex = 0;
      }
  }
  function hideLists(){
