@@ -9,6 +9,8 @@ function changeDish() {
             document.getElementById("stirfry").style.display = "none";
             document.getElementById("noodle").style.animationName = "fadeIn";
             document.getElementById("noodle").style.animationDuration = "1s";
+            document.getElementById("DishCurry").selectedIndex = 0;
+            document.getElementById("DishStirfry").selectedIndex = 0;
 
             return;
 
@@ -20,6 +22,8 @@ function changeDish() {
             document.getElementById("noodle").style.display = "none";
             document.getElementById("curry").style.animationName = "fadeIn";
             document.getElementById("curry").style.animationDuration = "1s";
+            document.getElementById("DishNoodle").selectedIndex = 0;
+            document.getElementById("DishStirfry").selectedIndex = 0;
             return;
         }
 
@@ -30,6 +34,8 @@ function changeDish() {
             document.getElementById("noodle").style.display = "none";
             document.getElementById("stirfry").style.animationName = "fadeIn";
             document.getElementById("stirfry").style.animationDuration = "1s";
+            document.getElementById("DishCurry").selectedIndex = 0;
+            document.getElementById("DishStirfry").selectedIndex = 0;
             return;
         }
 
