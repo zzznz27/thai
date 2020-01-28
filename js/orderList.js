@@ -39,7 +39,8 @@ function getOrders(d) {
 
 
         for (var i = 0; i < noOfOrders; i++) {
-            console.log(noOfOrders[i].orderDate)
+            console.log(orderlist[i].orderDate);
+            
               
         
         }
