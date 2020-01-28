@@ -7,21 +7,7 @@ var express = require('express')
 var fs = require('fs')
 var app = express()
 var path = require('path');
-const createCsvWriter = require('csv-writer').createObjectCsvWriter;
-var csvWriter = createCsvWriter({
-    path: 'out.csv',
-    header: [
-        { id: 'name', title: 'name' },
-        { id: 'filling', title: 'filling' },
-        { id: 'Dishtype', title: 'Dishtype' },
-        { id: 'DishNoodle', title: 'DishNoodle' },
-        { id: 'DishCurry', title: 'DishCurry' },
-        { id: 'DishStirfry', title: 'DishStirfry' },
-        { id: 'drink', title: 'drink' },
-        { id: 'message', title: 'message' },
 
-    ]
-});
 
 var bodyParser = require('body-parser');
 
