@@ -40,6 +40,14 @@ html {
 
 }
 
+@media only screen and (min-height: 700px) {
+
+  body,
+  html {
+    overflow: hidden
+  }
+}
+
 /*---------------------------------------------*/
 a {
   font-family: Poppins-Regular;
@@ -644,10 +652,21 @@ textarea.input100 {
   white-space: nowrap;
   margin-top: 20px;
   width: 100%;
+
+
+
 }
+
+
+.arrow:hover {
+  transition: all 0.4s;
+  transform: translateX(10px);
+
+}
+
+
 
 td {
   padding-right: 15px;
   white-space: nowrap;
-
 }

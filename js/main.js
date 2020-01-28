@@ -19,7 +19,18 @@
      setCookie("name", form.name.value);
      setCookie("filling", form.filling.value);
      setCookie("dish", form.dish.value);
+     if (form.DishNoodle.value != "Select Option") {
+         setCookie("dishType", form.DishNoodle.value);
+
+     } else if (form.DishCurry.value != "Select Option") {
+         setCookie("dishType", form.DishCurry.value);
+
+     } else if (form.DishStirfry.value != "Select Option") {
+         setCookie("dishType", form.DishStirfry.value);
+
+     }
      setCookie("drink", form.drink.value);
+     setCookie("notes", form.message.value);
      return true;
  }
 
@@ -84,16 +95,32 @@
      let filling = getCookie("filling")
      let dish = getCookie("dish");
      let drink = getCookie("drink");
+     let dishType = getCookie("dishType");
+     let notes = getCookie("notes");
 
-     document.getElementById("order-list").innerHTML = "<table><tr><td><strong>Name:</strong></td>" +
+
+
+
+     document.getElementById("order-list").innerHTML = "<table>" +
+         "<tr><td><strong>Name:</strong></td>" +
          "<td>" + name + "</td></tr>" +
+
          "<tr><td><strong>Filling:</strong></td>" +
          "<td>" + filling + "</td></tr>" +
+
          "<tr><td><strong>Dish:</strong></td>" +
          "<td>" + dish + "</td> </tr>" +
-         "<tr><td><strong>Drink:</strong></td>" +
-         "<td>" + drink + "</td></tr></table>";
 
+         "<tr><td><strong>Dish Type:</strong></td>" +
+         "<td>" + dishType + "</td> </tr>" +
+
+         "<tr><td><strong>Drink:</strong></td>" +
+         "<td>" + drink + "</td></tr>" +
+
+         "<tr><td><strong>Notes:</strong></td>" +
+         "<td>" + notes + "</td></tr>" +
+
+         "</table>";
 
  }
 
@@ -118,13 +145,31 @@
  function loadCookie() {
 
      if (name = getCookie("name")) document.forms[0].name.value = name;
+
      if (filling = getCookie("filling")) document.forms[0].filling.value =
          document.getElementsByClassName("select2-selection__rendered")[0].innerHTML = filling;
 
-     if (name = getCookie("dish")) document.forms[0].dish.value =
-         document.getElementsByClassName("select2-selection__rendered")[2].innerHTML = dish;
+     if (dish = getCookie("dish")) document.forms[0].dish.value =
+         document.getElementsByClassName("select2-selection__rendered")[1].innerHTML = dish;
 
-     if (name = getCookie("drink")) document.forms[0].drink.value = document.getElementsByClassName("select2-selection__rendered")[5].innerHTML = drink;
+     changeDish();
+
+     if (dish == "Noodle") {
+         if (dishType = getCookie("dishType")) document.forms[0].DishNoodle.value = document.getElementsByClassName("select2-selection__rendered")[2].innerHTML = dishType;
+
+     } else if (dish == "Curry") {
+         if (dishType = getCookie("dishType")) document.forms[0].DishCurry.value = document.getElementsByClassName("select2-selection__rendered")[3].innerHTML = dishType;
+
+     } else if (dish == "StirFry") {
+         if (dishType = getCookie("dishType")) document.forms[0].DishStirfry.value = document.getElementsByClassName("select2-selection__rendered")[4].innerHTML = dishType;
+     }
+
+     if (drink = getCookie("drink")) document.forms[0].drink.value = document.getElementsByClassName("select2-selection__rendered")[5].innerHTML = drink;
+
+     if (notes = getCookie("notes")) document.forms[0].message.value = notes;
+
+
+
  }
 
  (function ($) {
@@ -165,9 +210,14 @@
              check = false;
          }
          if (check) {
-             document.body.style.overflowY = 'hidden';
              document.getElementById("formContainer").style.animationName = "fadeOutDown";
              document.getElementById("formContainer").style.animationDuration = "2s";
+             document.getElementById("favContainer").style.transition = "all 1s";
+             document.getElementById("favContainer").style.opacity = "0";
+             document.getElementById("favContainer").style.width = "0px";
+             document.getElementById("favContainer").style.height = "0%";
+             document.getElementById("favContainer").style.padding = "0px";
+
          }
 
          storeValues(document.forms[0]);
