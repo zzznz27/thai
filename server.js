@@ -90,7 +90,7 @@ app.get('/list', function (req, res) {
      con.query(query, function (err, result) {
         if (err) throw err;
         console.log( typeof result);
-        console.log("1 r");
+        console.log("Record produced");
         //var myJSON = JSON.stringify(result);
         res.send( result);
       });

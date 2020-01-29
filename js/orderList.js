@@ -31,7 +31,11 @@ function checkDate(){
 function getOrders(d) {
 
     var client = new HttpClient();
-
+    if (document.getElementById('table')){
+        console.log("It Exists");
+        document.getElementById('table').remove();
+    }
+    
     client.get('/list', function (response) {
         console.log(typeof response)
         var orderlist = JSON.parse(response);
@@ -39,10 +43,18 @@ function getOrders(d) {
 
 
         for (var i = 0; i < noOfOrders; i++) {
-            console.log(orderlist[i].orderDate);
-            
-              
-        
+            console.log('Response: ' + orderlist[i]["orderDate"]);
+            var date = new Date(orderlist[i]["orderDate"]);
+            orderlist[i]["orderDate"] = date;
+            console.log("Date of order " + date.getDate() +  " Date of selected: " +  d.getDate()  )
+            if (date.getDate() == d.getDate()  || (date.getDate() +3 == d.getDate()) || (date.getDate()+2 == d.getDate())|| (date.getDate()+1 == d.getDate())){
+                console.log("correct dates, do not splice")            
+            }else{
+                console.log("wrong dates, splice")
+                orderlist.splice(i);
+                noOfOrders = Object.size(orderlist)
+                
+            }
         }
         console.log(noOfOrders);
         if (noOfOrders > 0) {
@@ -50,10 +62,12 @@ function getOrders(d) {
 
             // CREATE DYNAMIC TABLE.
             var table = document.createElement("table");
+            table.setAttribute("id", "table");
             table.style.width = '50%';
             table.setAttribute('border', '1');
             table.setAttribute('cellspacing', '0');
             table.setAttribute('cellpadding', '5');
+            table.classList.add('table-fill');
 
             // retrieve column header ('Name', 'Email', and 'Mobile')
 
@@ -111,10 +125,10 @@ function getOrders(d) {
 
     });
 
-    document.getElementById("orderContainer").style.display = "block";
-    document.getElementById("orderContainer").style.animationName = "bounceInDown";
-    document.getElementById("orderContainer").style.animationDuration = "2s";
-    document.getElementById("body").style.overflow = "hidden";
+    // document.getElementById("orderContainer").style.display = "block";
+    // document.getElementById("orderContainer").style.animationName = "bounceInDown";
+    // document.getElementById("orderContainer").style.animationDuration = "2s";
+    // document.getElementById("body").style.overflow = "hidden";
 
 
 
