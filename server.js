@@ -76,7 +76,8 @@ app.post('/order', function (req, res) {
         dish: dish,
         drink: req.body.drink,
         requirements: req.body.message,
-        orderDate: date_ob
+        orderDate: date_ob,
+        paid: 'n'
     }
     var query = "INSERT INTO orders SET ?";
 
@@ -108,20 +109,26 @@ app.get('/list', function (req, res) {
 
 });
 app.get('/pendingpayments', function (req, res) {
-    var query = "SELECT * FROM orders"
+    var query = "SELECT * FROM orders WHERE paid = 'n'"
      con.query(query, function (err, result) {
         if (err) throw err;
-        console.log( typeof result);
+        console.log( result);
         console.log("Record produced");
-        //var myJSON = JSON.stringify(result);
+        var myJSON = JSON.stringify(result);
         res.send( result);
       });
       
 
 });
 
-app.post('/dates', function (req, res) {
-    console.log(req)
+app.post('/updatePayments', function (req, res) {
+   console.log(req.body)
+
+   var query = "UPDATE orders SET paid = 'y' WHERE idorders =" + req.body.idorders
+   con.query(query, function (err, result) {
+      if (err) throw err;
+    });
+
 });
 
 app.listen(8080, function () {
