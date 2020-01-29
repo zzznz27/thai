@@ -654,9 +654,6 @@ textarea.input100 {
   white-space: nowrap;
   margin-top: 20px;
   width: 100%;
-
-
-
 }
 
 
@@ -681,10 +678,12 @@ td {
 }
 
 div#orderList {
-  width: auto;
   opacity: 0;
+  width: 0px;
   padding: 0px;
-  max-width: 0px;
+  transition: all 2s;
+
+
 
 }
 
