@@ -105,7 +105,7 @@ function onLoad() {
                 }
                 var td = document.createElement("td");
                 var button = document.createElement("button");
-                button.innerHTML = "Update Payment";
+                button.innerHTML = "Update";
                 td.appendChild(button);
                 button.setAttribute('name', 'button' + i);
                 button.setAttribute('onclick', 'setPaid(' + i + ',' + orderlist[i]["idorders"] + ')');
@@ -137,19 +137,29 @@ function onLoad() {
 
 }
 function setPaid(n, list) {
-    var xhr = new XMLHttpRequest();
-    var url = "/updatePayments";
-    xhr.open("POST", url, true);
-    xhr.setRequestHeader("Content-Type", "application/json");
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-            var json = JSON.parse(xhr.responseText);
-            console.log(json.email + ", " + json.password);
-        }
-    };
-    var data = JSON.stringify({ "idorders": list });
-    xhr.send(data);
-    location.reload();
+
+    
+    var r = confirm("Are you sure they have paid?");
+    if (r == true) {
+        var xhr = new XMLHttpRequest();
+        var url = "/updatePayments";
+        xhr.open("POST", url, true);
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                var json = JSON.parse(xhr.responseText);
+                console.log(json.email + ", " + json.password);
+            }
+        };
+        var data = JSON.stringify({ "idorders": list });
+        xhr.send(data);
+        location.reload();
+    } else {
+        
+    }
+
+
+   
 }
 
 function addBorder() {
