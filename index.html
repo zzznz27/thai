@@ -33,15 +33,25 @@
 
 
 	<div class="container-contact100">
-		<button style="position: absolute; top: 10px; left: 10px;" onclick="showFavourites()">Favourites</button>
+
 
 		<div class="wrap-contact100 " id="formContainer" style="display: none;">
-			<!-- Display set to none for animation -->
+
+			<!--Dispplay set to none for animation -->
+			<button class="last" style=" font-size: small; float: right; width:65px;    margin-top: 0px;"
+				onclick="showFavourites()">
+				<img class="arrow" src="/images/icons/arrow.png" style="width: 25px;height: 25px;"
+					alt="Previous orders"></button>
+
+
+
 
 			<form class="contact100-form validate-form" action="/order" method="POST" id="form">
+
 				<span class="contact100-form-title">
 					<h2>Thai Order Form</h2>
 				</span>
+
 
 				<div class="wrap-input100 validate-input" data-validate="Name is required">
 					<span class="label-input100">Your Name</span>
@@ -53,78 +63,78 @@
 					<div>
 						<select class="selection-2" name="filling">
 							<option>Select Option</option>
-							<option value="10" id="Vegetable">Vegetable</option>
-							<option value="10" id="Chicken">Chicken</option>
-							<option value="10" id="Beef">Beef</option>
-							<option value="13" id="Combination Chicken & Beef">Combination</option>
-							<option value="13" id="BBQ Pork">BBQ Pork</option>
-							<option value="13" id="Cripsy Pork">Cripsy Pork</option>
-							<option value="15" id="Duck">Duck</option>
-							<option value="15" id="Prawns">Prawns</option>
-							<option value="15" id="Seafood">Seafood</option>
+							<option id="Vegetable">Vegetable</option>
+							<option id="Chicken">Chicken</option>
+							<option id="Beef">Beef</option>
+							<option id="Combination Chicken & Beef">Combination</option>
+							<option id="BBQ Pork">BBQ Pork</option>
+							<option id="Cripsy Pork">Cripsy Pork</option>
+							<option id="Duck">Duck</option>
+							<option id="Prawns">Prawns</option>
+							<option id="Seafood">Seafood</option>
 						</select>
 					</div>
 					<span class="focus-input100"></span>
 				</div>
 
-					<div class="wrap-input100 input100-select">
-						<span class="label-input100">Dish type</span>
-						<div>
-							<select class="selection-2" name="dishType" id="dish" data-validate="Dish is required"
-								onChange="changeDish()">
-								<option>Select Option</option>
-								<option>Noodle</option>
-								<option>Curry</option>
-								<option>StirFry</option>
-							</select>
-						</div>
-						<span class="focus-input100"></span>
+				<div class="wrap-input100 input100-select">
+					<span class="label-input100">Dish type</span>
+					<div>
+						<select class="selection-2" name="dishType" id="dish" data-validate="Dish is required"
+							onChange="changeDish()">
+							<option>Select Option</option>
+							<option>Noodle</option>
+							<option>Curry</option>
+							<option>StirFry</option>
+						</select>
 					</div>
-					<div class="wrap-input100 input100-select" id="noodle">
-						<span class="label-input100">Noodles</span>
-						<div>
-							<select class="selection-2" name="DishNoodle" id="DishNoodle">
-								<option>Select Option</option>
-								<option>Pad Thai</option>
-								<option>Pad See Iw</option>
-								<option>Chilli Basil Noodle</option>
-								<option>Cashew Nut Noodle</option>
-								<option>Pad Ba-Mee</option>
-								<option>Hokkien Noodle</option>
-								<option>Garlic & Ginger Noodle</option>
-								<option>Satay Noodle</option>
-								<option>Singapre Noodle</option>
-							</select>
-						</div>
+					<span class="focus-input100"></span>
+				</div>
+				<div class="wrap-input100 input100-select" id="noodle">
+					<span class="label-input100">Noodles</span>
+					<div>
+						<select class="selection-2" name="DishNoodle" id="DishNoodle">
+							<option>Select Option</option>
+							<option>Pad Thai</option>
+							<option>Pad See Iw</option>
+							<option>Chilli Basil Noodle</option>
+							<option>Cashew Nut Noodle</option>
+							<option>Pad Ba-Mee</option>
+							<option>Hokkien Noodle</option>
+							<option>Garlic & Ginger Noodle</option>
+							<option>Satay Noodle</option>
+							<option>Singapre Noodle</option>
+						</select>
 					</div>
-					<div class="wrap-input100 input100-select" id="curry">
-						<span class="label-input100">Curry</span>
-						<div>
-							<select class="selection-2" name="DishCurry" id ="DishCurry">
-								<option>Select Option</option>
-								<option>Thai Green Curry</option>
-								<option>Thai Red Curry</option>
-								<option>Panang Curry</option>
-							</select>
-						</div>
+				</div>
+				<div class="wrap-input100 input100-select" id="curry">
+					<span class="label-input100">Curry</span>
+					<div>
+						<select class="selection-2" name="DishCurry" id="DishCurry">
+							<option>Select Option</option>
+							<option>Thai Green Curry</option>
+							<option>Thai Red Curry</option>
+							<option>Panang Curry</option>
+						</select>
 					</div>
-					<div id="stirfry" class="wrap-input100 input100-select">
-						<span class="label-input100">StirFry</span>
-						<div>
-							<select class="selection-2" name="DishStirfry" id ="DishStirfry" >
-								<option>Select Option</option>
-								<option>Oyster Sauce</option>
-								<option>Garlic Sauce</option>
-								<option>Ginger Sauce</option>
-								<option>Peanut Sauce</option>
-								<option>Chilli Basil Sauce</option>
-								<option>Cashew Nut Sauce</option>
-								<option>Fried Rice</option>
-								<option>Chilli Fried Rice</option>
-							</select>
-						</div>
+				</div>
+				<div id="stirfry" class="wrap-input100 input100-select">
+					<span class="label-input100">StirFry</span>
+					<div>
+						<select class="selection-2" name="DishStirfry" id="DishStirfry">
+							<option>Select Option</option>
+							<option>Oyster Sauce</option>
+							<option>Garlic Sauce</option>
+							<option>Ginger Sauce</option>
+							<option>Peanut Sauce</option>
+							<option>Chilli Basil Sauce</option>
+							<option>Cashew Nut Sauce</option>
+							<option>Fried Rice</option>
+							<option>Chilli Fried Rice</option>
+						</select>
 					</div>
-				
+				</div>
+
 				<div id="drink" class="wrap-input100 input100-select validate-input" data-validate="Drink is required">
 					<span class="label-input100">Drink</span>
 					<div>
@@ -142,7 +152,7 @@
 				<div class="wrap-input100 validate-input">
 					<span class="label-input100">Special requirements</span>
 					<textarea class="input100" name="message" styles="resize: none;"
-						placeholder="Your message	here..."></textarea>
+						placeholder="Your message here..."></textarea>
 					<span class="focus-input100"></span>
 				</div>
 
@@ -164,7 +174,12 @@
 
 		<!-- Favourites container  -->
 		<div class="wrap-contact100 favorite-container" id="favContainer">
-			<h3>Favourites</h3>
+			<h3>Last Order</h3>
+			<p id="order-list">
+
+
+			</p>
+			<button class=last onclick="loadCookie()">Load last</button>
 
 		</div>
 
