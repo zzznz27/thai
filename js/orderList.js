@@ -49,7 +49,7 @@ function getOrders(d) {
             // console.log('Response: ' + orderlist[i]["orderDate"]);
             var date = new Date(orderlist[i]["orderDate"]);
             orderlist[i]["orderDate"] = date.getHours().toFixed(0) + ":" + date.getMinutes() + "  " +
-                ('0' + MyDate.getDate()).slice(-2) + "/" + (date.getMonth().toFixed(0) + 1) + "/" + date.getFullYear().toFixed(0);
+                ('0' + date.getDate()).slice(-2) + "/" + (date.getMonth().toFixed(0) + 1) + "/" + date.getFullYear().toFixed(0);
             // console.log("Date of order " + date.getDate() + " Date of selected: " + d.getDate())
             if (date.getDate() == d.getDate() || (date.getDate() + 3 == d.getDate()) || (date.getDate() + 2 == d.getDate()) || (date.getDate() + 1 == d.getDate())) {
                 // console.log("correct dates, do not splice")
