@@ -14,6 +14,15 @@
      return (value != null) ? unescape(value[1]) : null;
  }
 
+ function closeFavourites() {
+
+     document.getElementById("favContainer").style.transition = "all 1s";
+     document.getElementById("favContainer").style.opacity = "0";
+     document.getElementById("favContainer").style.width = "0px";
+     document.getElementById("favContainer").style.height = "0%";
+     document.getElementById("favContainer").style.padding = "0px";
+
+ }
 
  function storeValues(form) {
      setCookie("name", form.name.value);
@@ -47,6 +56,7 @@
              document.getElementById("noodle").style.animationDuration = "1s";
              document.getElementById("DishCurry").selectedIndex = 0;
              document.getElementById("DishStirfry").selectedIndex = 0;
+             console.log(document.getElementById("DishStirfry").value);
              return;
 
          }
@@ -133,11 +143,7 @@
          document.getElementById("favContainer").style.height = "100%";
          document.getElementById("favContainer").style.padding = "42px 55px 45px 55px";
      } else {
-         document.getElementById("favContainer").style.transition = "all 1s";
-         document.getElementById("favContainer").style.opacity = "0";
-         document.getElementById("favContainer").style.width = "0px";
-         document.getElementById("favContainer").style.height = "0%";
-         document.getElementById("favContainer").style.padding = "0px";
+         closeFavourites()
 
      }
  }
@@ -168,7 +174,7 @@
 
      if (notes = getCookie("notes")) document.forms[0].message.value = notes;
 
-
+     closeFavourites()
 
  }
 
@@ -217,10 +223,10 @@
              document.getElementById("favContainer").style.width = "0px";
              document.getElementById("favContainer").style.height = "0%";
              document.getElementById("favContainer").style.padding = "0px";
+             storeValues(document.forms[0]);
 
          }
 
-         storeValues(document.forms[0]);
 
          return check;
      });
