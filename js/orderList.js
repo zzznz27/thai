@@ -1,4 +1,3 @@
-
 var HttpClient = function () {
     this.get = function (aUrl, aCallback) {
         var anHttpRequest = new XMLHttpRequest();
@@ -11,18 +10,19 @@ var HttpClient = function () {
         anHttpRequest.send(null);
     }
 }
-function checkDate(){
+
+function checkDate() {
     var date = document.getElementById("orderDate");
     console.log((date.value));
     var d = new Date(date.value);
-    var n =d.getDay();
+    var n = d.getDay();
 
-    if(n != 5){
-        alert('Please select a valid Friday');
-        document.getElementById("orderDate").value = 'dd/mm/yyyy';
-    }else{
-        getOrders(d)
-    }
+    // if(n != 5){
+    //     alert('Please select a valid Friday');
+    //     document.getElementById("orderDate").value = 'dd/mm/yyyy';
+    // }else{
+    getOrders(d)
+    // }
 
 
 
@@ -40,9 +40,9 @@ function getOrders(d) {
 
         for (var i = 0; i < noOfOrders; i++) {
             console.log(orderlist[i].orderDate);
-            
-              
-        
+
+
+
         }
         console.log(noOfOrders);
         if (noOfOrders > 0) {
@@ -53,7 +53,7 @@ function getOrders(d) {
             table.style.width = '50%';
             table.setAttribute('border', '1');
             table.setAttribute('cellspacing', '0');
-            table.setAttribute('cellpadding', '5');
+            table.setAttribute('cellpadding', '20');
 
             // retrieve column header ('Name', 'Email', and 'Mobile')
 
@@ -111,9 +111,13 @@ function getOrders(d) {
 
     });
 
-    document.getElementById("orderContainer").style.display = "block";
-    document.getElementById("orderContainer").style.animationName = "bounceInDown";
-    document.getElementById("orderContainer").style.animationDuration = "2s";
+    // document.getElementById("orderList").style.display = "block";
+    // document.getElementById("orderList").style.animationName = "fadeIn";
+    // document.getElementById("orderList").style.animationDuration = "2s";
+    document.getElementById("orderList").style.transition = "opacity 2s, max-width 3s";
+    document.getElementById("orderList").style.opacity = "1";
+    document.getElementById("orderList").style.padding = "42px 55px 45px 55px";
+    document.getElementById("orderList").style.maxWidth = "2000px";
     document.getElementById("body").style.overflow = "hidden";
 
 
@@ -133,7 +137,8 @@ function remBorder() {
     document.getElementById("close").style.borderColor = 'white';
 }
 Object.size = function (obj) {
-    var size = 0, key;
+    var size = 0,
+        key;
     for (key in obj) {
         if (obj.hasOwnProperty(key)) size++;
     }

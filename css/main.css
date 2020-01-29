@@ -40,13 +40,7 @@ html {
 
 }
 
-@media only screen and (min-height: 700px) {
 
-  body,
-  html {
-    overflow: hidden
-  }
-}
 
 /*---------------------------------------------*/
 a {
@@ -232,6 +226,7 @@ iframe {
   overflow: hidden;
   padding: 42px 55px 45px 55px;
 }
+
 .wrap-contact200 {
   width: 1000px;
   background: #fff;
@@ -676,4 +671,49 @@ textarea.input100 {
 td {
   padding-right: 15px;
   white-space: nowrap;
+}
+
+#orderList>table {
+
+  width: 100%;
+  height: 100%;
+
+}
+
+div#orderList {
+  width: auto;
+  opacity: 0;
+  padding: 0px;
+  max-width: 0px;
+
+}
+
+#orderList>table>thead>tr>th,
+#orderList>table>tbody>tr>td {
+
+  padding: 20px;
+
+}
+
+.break {
+  flex-basis: 100%;
+  height: 0;
+}
+
+
+@media only screen and (min-height: 700px) {
+
+  body,
+  html {
+    overflow: hidden
+  }
+
+
+
+}
+
+@media only screen and (max-width: 500px) {
+  #orderList {
+    overflow-x: auto;
+  }
 }
