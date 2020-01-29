@@ -56,28 +56,38 @@ app.post('/order', function (req, res) {
     let time = hours + ":" + minutes + ":" + seconds + "  " + date + "-" + month + "-" + year
     console.log(hours + ":" + minutes + ":" + seconds + "  " + date + "-" + month + "-" + year);
     console.log(typeof req.body.filling)
-    
-    let dish ="";
-    if (req.body.DishNoodle != "Select Option"){
+
+    let dish = "";
+    if (req.body.DishNoodle != "Select Option") {
         dish = req.body.DishNoodle
     }
-    if (req.body.DishCurry != "Select Option"){
+    if (req.body.DishCurry != "Select Option") {
         dish = req.body.DishCurry
     }
-    if (req.body.DishStirfry != "Select Option"){
+    if (req.body.DishStirfry != "Select Option") {
         dish = req.body.DishStirfry
     }
 
     console.log('Dish: ' + dish);
-    let order = {name: req.body.name, filling:req.body.filling, dishType:req.body.dishType, dish:dish, drink:req.body.drink, requirements:req.body.message, orderDate:date_ob}
+    let order = {
+        name: req.body.name,
+        filling: req.body.filling,
+        dishType: req.body.dishType,
+        dish: dish,
+        drink: req.body.drink,
+        requirements: req.body.message,
+        orderDate: date_ob
+    }
     var query = "INSERT INTO orders SET ?";
 
-    con.query(query,order, function (err, result) {
+    con.query(query, order, function (err, result) {
         if (err) throw err;
         console.log("1 record inserted");
-      });
-  
-    res.writeHead(301, { Location: '/OrderPlaced.html' });
+    });
+
+    res.writeHead(301, {
+        Location: '/OrderPlaced.html'
+    });
     res.end();
     return (res)
 });
@@ -87,14 +97,14 @@ app.get('/', function (req, res) {
 });
 app.get('/list', function (req, res) {
     var query = "SELECT * FROM orders"
-     con.query(query, function (err, result) {
+    con.query(query, function (err, result) {
         if (err) throw err;
-        console.log( typeof result);
-        console.log("Record produced");
+        // console.log(typeof result);
+        // console.log("Record produced");
         //var myJSON = JSON.stringify(result);
-        res.send( result);
-      });
-      
+        res.send(result);
+    });
+
 
 });
 app.post('/dates', function (req, res) {

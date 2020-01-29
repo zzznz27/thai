@@ -670,6 +670,10 @@ td {
   white-space: nowrap;
 }
 
+th {
+  text-transform: capitalize;
+}
+
 #orderList>table {
 
   width: 100%;
