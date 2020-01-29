@@ -97,6 +97,19 @@ app.get('/list', function (req, res) {
       
 
 });
+app.get('/pendingpayments', function (req, res) {
+    var query = "SELECT * FROM orders"
+     con.query(query, function (err, result) {
+        if (err) throw err;
+        console.log( typeof result);
+        console.log("Record produced");
+        //var myJSON = JSON.stringify(result);
+        res.send( result);
+      });
+      
+
+});
+
 app.post('/dates', function (req, res) {
     console.log(req)
 });
