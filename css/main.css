@@ -320,7 +320,6 @@ input.input100 {
 
 
 textarea.input100 {
-  min-height: 110px;
   padding-top: 9px;
   padding-bottom: 13px;
 }
@@ -657,6 +656,7 @@ textarea.input100 {
 
 .arrow {
   animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
 }
 
 

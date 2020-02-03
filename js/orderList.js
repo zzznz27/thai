@@ -157,3 +157,9 @@ Object.size = function (obj) {
     }
     return size;
 };
+
+function onLoad()
+{
+
+    document.getElementById("dates").style.animation= "fadeInDown 1s forwards";
+}
