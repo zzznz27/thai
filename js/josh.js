@@ -81,13 +81,19 @@ function onLoad() {
 
             // CREATE ROW FOR TABLE HEAD .
             var hRow = document.createElement("tr");
+            hRow.setAttribute("class", "row100 head");
 
             // ADD COLUMN HEADER TO ROW OF TABLE HEAD.
             for (var i = 0; i < col.length; i++) {
                 var th = document.createElement("th");
                 th.innerHTML = col[i];
+                th.setAttribute("class", "column100 column" + (i + 1));
                 hRow.appendChild(th);
             }
+            var th = document.createElement("th");
+            th.setAttribute("class", "column100 column" + (i + 1));
+            th.innerHTML = "Paid?";
+            hRow.appendChild(th);
             tHead.appendChild(hRow);
             table.appendChild(tHead);
 
@@ -98,22 +104,29 @@ function onLoad() {
             for (var i = 0; i < noOfOrders; i++) {
 
                 var bRow = document.createElement("tr"); // CREATE ROW FOR EACH RECORD .
+                bRow.setAttribute("class", "row100");
 
 
                 for (var j = 0; j < col.length; j++) {
                     var td = document.createElement("td");
+                    td.setAttribute("class", "column100 column" + (j));
+
                     td.innerHTML = orderlist[i][col[j]];
                     bRow.appendChild(td);
 
 
 
                 }
+
                 var td = document.createElement("td");
+                td.setAttribute("class", "column100 column" + (col.length + 1));
+
                 var button = document.createElement("button");
                 button.innerHTML = "Update";
                 td.appendChild(button);
                 button.setAttribute('name', 'button' + i);
                 button.setAttribute('onclick', 'setPaid(' + i + ',' + orderlist[i]["idorders"] + ')');
+                button.style.color = "white";
                 bRow.appendChild(td);
                 tBody.appendChild(bRow)
 
