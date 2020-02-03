@@ -68,11 +68,11 @@ app.post('/order', function (req, res) {
         dish = req.body.DishStirfry
     }
     let spicy = "";
-    if (req.body.spicy != null){
+    if (req.body.spicy != null) {
         spicy = 'spicy'
     }
     let meat = "";
-    if (req.body.meat != null){
+    if (req.body.meat != null) {
         meat = 'extra meat'
     }
     console.log('meat:' + meat);
@@ -82,17 +82,17 @@ app.post('/order', function (req, res) {
 
     // Calculate Price
     let price = 0;
-    if (req.body.meat != null){
+    if (req.body.meat != null) {
         price = price + 2;
-        
+
     }
-    if (req.body.filling == 'Vegetable' || req.body.filling == 'Chicken' || req.body.filling == 'beef'){
+    if (req.body.filling == 'Vegetable' || req.body.filling == 'Chicken' || req.body.filling == 'beef') {
         price = price + 10;
     }
-    if (req.body.filling == 'Combination' || req.body.filling == 'BBQ pork' || req.body.filling == 'Crispy Pork'){
+    if (req.body.filling == 'Combination' || req.body.filling == 'BBQ pork' || req.body.filling == 'Crispy Pork') {
         price = price + 13;
     }
-    if (req.body.filling == 'Duck' || req.body.filling == 'Prawns' || req.body.filling == 'Seafood'){
+    if (req.body.filling == 'Duck' || req.body.filling == 'Prawns' || req.body.filling == 'Seafood') {
         price = price + 15;
     }
 
@@ -104,7 +104,7 @@ app.post('/order', function (req, res) {
         dishType: req.body.dishType,
         dish: dish,
         drink: req.body.drink,
-        requirements: spicy + ', ' + meat + ', ' + req.body.message ,
+        requirements: spicy + ', ' + meat + ', ' + req.body.message,
         orderDate: date_ob,
         paid: 'n',
         price: price
@@ -118,9 +118,10 @@ app.post('/order', function (req, res) {
 
     //res.query = 'test';
 
-    var string = '?price='+price;
-    res.redirect('/OrderPlaced.html' + string);
 
+    var string = '?price=' + price;
+    res.redirect('/OrderPlaced.html' + string);
+    console.log(string);
 });
 
 app.get('/', function (req, res) {
@@ -140,23 +141,23 @@ app.get('/list', function (req, res) {
 });
 app.get('/pendingpayments', function (req, res) {
     var query = "SELECT * FROM orders WHERE paid = 'n'"
-     con.query(query, function (err, result) {
+    con.query(query, function (err, result) {
         if (err) throw err;
-        console.log( result);
+        console.log(result);
         console.log("Record produced");
         var myJSON = JSON.stringify(result);
-        res.send( result);
-      });
-      
+        res.send(result);
+    });
+
 
 });
 
 app.post('/updatePayments', function (req, res) {
-   console.log(req.body)
+    console.log(req.body)
 
-   var query = "UPDATE orders SET paid = 'y' WHERE idorders =" + req.body.idorders
-   con.query(query, function (err, result) {
-      if (err) throw err;
+    var query = "UPDATE orders SET paid = 'y' WHERE idorders =" + req.body.idorders
+    con.query(query, function (err, result) {
+        if (err) throw err;
     });
 
 });
