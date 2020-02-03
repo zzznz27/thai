@@ -27,11 +27,12 @@
 	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="/css/nav.css">
 
+	<link rel="stylesheet" type="text/css" href="/css/table.css">
 
 	<!--===============================================================================================-->
 </head>
 
-<body id="body" onload="onLoad()">
+<body id="body" onload="onLoad()" style="overflow: auto;">
 
 
 	<div class="container-contact100">
@@ -44,6 +45,8 @@
 				<li> <a href='/Menu.html'>Menu</a> </li>
 				<li> <a href='/Order_list.html'>Orders</a> </li>
 				<li> <a href='/Payment.html'>Payment Info</a> </li>
+				<li> <a href='/analytics.html'>Analytics</a> </li>
+
 
 			</ul>
 		</label>
@@ -52,10 +55,16 @@
 
 			<div id="orderList" class="wrap-contact100">
 				<div class="wrap-input100 input100-select">
-					<span class="label-input100">Unpaid orders</span>
+					<h3>Unpaid orders</h3>
 
 					<span class="focus-input100"></span>
+
+
 				</div>
+				<div id="tableContainer" class="table100 ver6 m-b-110">
+
+				</div>
+
 			</div>
 			<div class="break"></div>
 
@@ -66,12 +75,10 @@
 
 		<div id="dropDownSelect1"></div>
 		<!--===============================================================================================-->
-		<script src="/vendor/jquery/jquery-3.2.1.min.js"></script>
+		<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
 		<!--===============================================================================================-->
-		<script src="/vendor/animsition/js/animsition.min.js"></script>
-		<!--===============================================================================================-->
-		<script src="/vendor/bootstrap/js/popper.js"></script>
-		<script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+		<script src="vendor/bootstrap/js/popper.js"></script>
+		<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 		<!--===============================================================================================-->
 		<script src="/vendor/select2/select2.min.js"></script>
 		<script>
@@ -87,6 +94,8 @@
 		<script src="/vendor/countdowntime/countdowntime.js"></script>
 		<!--===============================================================================================-->
 		<script src="/js/josh.js"></script>
+		<script src="/js/table.js"></script>
+
 
 
 		<!-- Global site tag (gtag.js) - Google Analytics -->

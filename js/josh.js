@@ -56,6 +56,9 @@ function onLoad() {
 
             // CREATE DYNAMIC TABLE.
             var table = document.createElement("table");
+            table.setAttribute("class", "ver6");
+
+
             table.setAttribute("id", "table");
             table.setAttribute('border', '1');
             table.setAttribute('cellspacing', '0');
@@ -102,6 +105,8 @@ function onLoad() {
                     td.innerHTML = orderlist[i][col[j]];
                     bRow.appendChild(td);
 
+
+
                 }
                 var td = document.createElement("td");
                 var button = document.createElement("button");
@@ -112,14 +117,16 @@ function onLoad() {
                 bRow.appendChild(td);
                 tBody.appendChild(bRow)
 
-
+                // if (i % 2 == 0) {
+                //     td.parentElement.style.backgroundColor = "whitesmoke";
+                // }
 
             }
             table.appendChild(tBody);
 
 
             // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
-            var divContainer = document.getElementById("orderList");
+            var divContainer = document.getElementById("tableContainer");
             divContainer.appendChild(table);
 
 
@@ -129,16 +136,15 @@ function onLoad() {
     });
 
     document.getElementById("orderList").style.opacity = "1";
-    document.getElementById("orderList").style.width = "1700px";
+    document.getElementById("orderList").style.width = "1800px";
     document.getElementById("orderList").style.padding = "42px 55px 45px 55px";
-    document.getElementById("body").style.overflow = "hidden";
 
 
 
 }
 function setPaid(n, list) {
 
-    
+
     var r = confirm("Are you sure they have paid?");
     if (r == true) {
         var xhr = new XMLHttpRequest();
@@ -155,11 +161,11 @@ function setPaid(n, list) {
         xhr.send(data);
         location.reload();
     } else {
-        
+
     }
 
 
-   
+
 }
 
 function addBorder() {
