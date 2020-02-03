@@ -12,7 +12,11 @@ function onLoad() {
     // document.getElementById("orderContainer").style.animationTimingFunction = "linear";
     // document.getElementById("orderContainer").style.animationIterationCount = "infinite";
 
-
+    
+    var url = new URL(window.location.href);
+    var c = url.searchParams.get("price");
+    console.log(c);
+    document.getElementById("price").innerHTML = '$' + c;
 
 }
 

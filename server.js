@@ -67,17 +67,47 @@ app.post('/order', function (req, res) {
     if (req.body.DishStirfry != "Select Option") {
         dish = req.body.DishStirfry
     }
+    let spicy = "";
+    if (req.body.spicy != null){
+        spicy = 'spicy'
+    }
+    let meat = "";
+    if (req.body.meat != null){
+        meat = 'extra meat'
+    }
+    console.log('meat:' + meat);
+
 
     console.log('Dish: ' + dish);
+
+    // Calculate Price
+    let price = 0;
+    if (req.body.meat != null){
+        price = price + 2;
+        
+    }
+    if (req.body.filling == 'Vegetable' || req.body.filling == 'Chicken' || req.body.filling == 'beef'){
+        price = price + 10;
+    }
+    if (req.body.filling == 'Combination' || req.body.filling == 'BBQ pork' || req.body.filling == 'Crispy Pork'){
+        price = price + 13;
+    }
+    if (req.body.filling == 'Duck' || req.body.filling == 'Prawns' || req.body.filling == 'Seafood'){
+        price = price + 15;
+    }
+
+    console.log('Price is : ' + price);
+
     let order = {
         name: req.body.name,
         filling: req.body.filling,
         dishType: req.body.dishType,
         dish: dish,
         drink: req.body.drink,
-        requirements: req.body.message,
+        requirements: spicy + ', ' + meat + ', ' + req.body.message ,
         orderDate: date_ob,
-        paid: 'n'
+        paid: 'n',
+        price: price
     }
     var query = "INSERT INTO orders SET ?";
 
@@ -86,11 +116,11 @@ app.post('/order', function (req, res) {
         console.log("1 record inserted");
     });
 
-    res.writeHead(301, {
-        Location: '/OrderPlaced.html'
-    });
-    res.end();
-    return (res)
+    //res.query = 'test';
+
+    var string = '?price='+price;
+    res.redirect('/OrderPlaced.html' + string);
+
 });
 
 app.get('/', function (req, res) {

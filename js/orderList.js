@@ -18,12 +18,12 @@ function checkDate() {
     var n = d.getDay();
 
 
-    // if(n != 5){
-    //     alert('Please select a valid Friday');
-    //     document.getElementById("orderDate").value = 'dd/mm/yyyy';
-    // }else{
-    getOrders(d)
-    // }
+    if (n != 5) {
+        alert('Please select a valid Friday');
+        document.getElementById("orderDate").value = 'dd/mm/yyyy';
+    } else {
+        getOrders(d)
+    }
 
 
 
