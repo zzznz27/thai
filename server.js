@@ -89,7 +89,7 @@ app.post('/order', function (req, res) {
     if (req.body.filling == 'Vegetable' || req.body.filling == 'Chicken' || req.body.filling == 'beef') {
         price = price + 10;
     }
-    if (req.body.filling == 'Combination' || req.body.filling == 'BBQ pork' || req.body.filling == 'Crispy Pork') {
+    if (req.body.filling == 'Combination' || req.body.filling == 'BBQ Pork' || req.body.filling == 'Crispy Pork') {
         price = price + 13;
     }
     if (req.body.filling == 'Duck' || req.body.filling == 'Prawns' || req.body.filling == 'Seafood') {
