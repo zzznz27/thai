@@ -15,7 +15,7 @@
 }
 
 .toggleButton input+div {
-  border: 3px solid linear-gradient(45deg, #00dbde, #fc00ff);
+  border: 3px solid white;
   border-radius: 50%;
   position: relative;
   width: 44px;
@@ -25,7 +25,8 @@
 .toggleButton input+div svg {
   fill: none;
   stroke-width: 3.6;
-  stroke: #fc00ff;
+  background: linear-gradient(45deg, #00dbde, #fc00ff);;
+  stroke: white;
   stroke-linecap: round;
   stroke-linejoin: round;
   width: 44px;
@@ -40,6 +41,8 @@
   stroke-dashoffset: 124.6;
   stroke-dasharray: 0 162.6 133 29.6;
   transition: all 0.4s ease 0s;
+  padding: 5px;
+  border-radius: 10px;
 }
 
 .toggleButton input+div:before,
@@ -47,11 +50,12 @@
   content: "";
   width: 3px;
   height: 16px;
-  background: linear-gradient(45deg, #00dbde, #fc00ff);
+  background: white;
   position: absolute;
   left: 50%;
   top: 50%;
   border-radius: 5px;
+  z-index: 10;
 }
 
 .toggleButton input+div:before {
