@@ -1,58 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-	<title>Analytics</title>
-	<meta charset="UTF-8">
-	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!--===============================================================================================-->
-	<link rel="icon" type="image/png" href="/images/icons/favicon.ico" />
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="/vendor/bootstrap/css/bootstrap.min.css">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="/vendor/animate/animate.css">
-	<!--===============================================================================================-->
-	<!-- <link rel="stylesheet" type="text/css"
-			href="/vendor/css-hamburgers/hamburgers.min.css"> -->
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="/vendor/animsition/css/animsition.min.css">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="/vendor/select2/select2.min.css">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="/vendor/daterangepicker/daterangepicker.css">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="/css/util.css">
-	<link rel="stylesheet" type="text/css" href="/css/main.css">
+	<head>
+		<title>Thai order</title>
+		<meta charset="UTF-8">
+		<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!--===============================================================================================-->
+		<link rel="icon" type="image/png" href="/images/icons/favicon.ico" />
+		<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css"
+			href="/vendor/bootstrap/css/bootstrap.min.css">
+		<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css"
+			href="/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+		<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="/vendor/animate/animate.css">
+		<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css"
+			href="/vendor/css-hamburgers/hamburgers.min.css">
+		<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css"
+			href="/vendor/animsition/css/animsition.min.css">
+		<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="/vendor/select2/select2.min.css">
+		<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css"
+			href="/vendor/daterangepicker/daterangepicker.css">
+		<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="/css/util.css">
+		<link rel="stylesheet" type="text/css" href="/css/main.css">
+		<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="/css/bird.css">
+		<!--===============================================================================================-->
+	</head>
 
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="/css/bird.css">
-	<link rel="stylesheet" type="text/css" href="/css/nav.css">
+	<body id="body" >
 
-	<!--===============================================================================================-->
-</head>
+		<div class="container-contact100">
 
-<body id="body" onload="onLoad();">
+			<div class="bird-container bird-container--one">
+				<div class="bird bird--one"></div>
+			</div>
 
-	<div class="container-contact100">
-		<label>
-			<input type='checkbox'>
-			<span class='menu'> <span class='hamburger'></span> </span>
-			<ul>
-				<li> <a href='/index.html'>Home</a> </li>
-				<li> <a href='/Menu.html'>Menu</a> </li>
-				<li> <a href='/Order_list.html'>Orders</a> </li>
-				<li> <a href='/Payment.html'>Payment Info</a> </li>
-				<li> <a href='/analytics.html'>Analytics</a> </li>
+			<div class="bird-container bird-container--two">
+				<div class="bird bird--two"></div>
+			</div>
 
+			<div class="bird-container bird-container--three">
+				<div class="bird bird--three"></div>
+			</div>
 
-			</ul>
-		</label>
+			<div class="bird-container bird-container--four">
+				<div class="bird bird--four"></div>
+			</div>
 
-		<div class="bird-container bird-container--one">
-			<div class="bird bird--one"></div>
+			<div class="wrap-contact100" id="orderContainer" >
+				<canvas id="myChart" width="400" height="400"></canvas>
+				<script>var ctx = document.getElementById('myChart').getContext('2d');
+					var myChart = new Chart(ctx, {
+						type: 'bar',
+						data: {
+							labels: ['Vegetable', 'Chicken', 'Beef', 'Combination', 'Crispy Pork'],
+							datasets: [{
+								label: 'Ordered fillings',
+								data: [12, 19, 3, 5, 2, 3],
+								backgroundColor: [
+									'rgba(255, 99, 132, 0.2)',
+									'rgba(54, 162, 235, 0.2)',
+									'rgba(255, 206, 86, 0.2)',
+									'rgba(75, 192, 192, 0.2)',
+									'rgba(153, 102, 255, 0.2)',
+									'rgba(255, 159, 64, 0.2)'
+								],
+								borderColor: [
+									'rgba(255, 99, 132, 1)',
+									'rgba(54, 162, 235, 1)',
+									'rgba(255, 206, 86, 1)',
+									'rgba(75, 192, 192, 1)',
+									'rgba(153, 102, 255, 1)',
+									'rgba(255, 159, 64, 1)'
+								],
+								borderWidth: 1
+							}]
+						},
+						options: {
+							scales: {
+								yAxes: [{
+									ticks: {
+										beginAtZero: true
+									}
+								}]
+							}
+						}
+					});</script>
+			
+			</div>
 		</div>
 
 		<div class="bird-container bird-container--two">
@@ -91,13 +134,14 @@
 			dropdownParent: $('#dropDownSelect1')
 		});
 	</script>
-	<!--===============================================================================================-->
-	<script src="/vendor/daterangepicker/moment.min.js"></script>
-	<script src="/vendor/daterangepicker/daterangepicker.js"></script>
-	<!--===============================================================================================-->
-	<script src="/vendor/countdowntime/countdowntime.js"></script>
-	<!--===============================================================================================-->
-	<script src="/js/analytics.js"></script>
+		<!--===============================================================================================-->
+		<script src="/vendor/daterangepicker/moment.min.js"></script>
+		<script src="/vendor/daterangepicker/daterangepicker.js"></script>
+		<!--===============================================================================================-->
+		<script src="/vendor/countdowntime/countdowntime.js"></script>
+		<!--===============================================================================================-->
+		<!-- <script src="/js/analytics.js"></script> -->
+
 
 
 
