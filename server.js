@@ -22,9 +22,9 @@ app.use(bodyParser.urlencoded({
 }));
 
 var con = mysql.createConnection({
-    host: "137.154.45.220",
-    user: "root",
-    password: "thai",
+    host: "159.65.5.79",
+    user: "thai",
+    password: "FridayThaiday",
     database: "orders"
 });
 
