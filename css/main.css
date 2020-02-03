@@ -235,32 +235,6 @@ iframe {
   padding: 42px 55px 45px 55px;
 }
 
-/*Nav Bar*/
-
-.topnav {
-  overflow: hidden;
-  background-color: #333;
-}
-
-.topnav a {
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-.topnav a.active {
-  background-color: #4CAF50;
-  color: white;
-}
-
 /*------------------------------------------------------------------
 [ Form ]*/
 
@@ -681,11 +655,8 @@ textarea.input100 {
   width: 100%;
 }
 
-
-.arrow:hover {
-  transition: all 0.4s;
-  transform: translateX(10px);
-
+.arrow {
+  animation-fill-mode: forwards;
 }
 
 
@@ -729,6 +700,7 @@ div#orderList {
 }
 
 
+/* 
 @media only screen and (min-height: 700px) {
 
   body,
@@ -738,10 +710,36 @@ div#orderList {
 
 
 
-}
+} */
 
 @media only screen and (max-width: 500px) {
   #orderList {
     overflow-x: auto;
+  }
+}
+
+@keyframes rote {
+  0% {
+    transform: rotate(0deg);
+
+
+  }
+
+  100% {
+    transform: rotate(-180deg);
+
+  }
+}
+
+@keyframes revrote {
+  0% {
+    transform: rotate(-180deg);
+
+  }
+
+  100% {
+    transform: rotate(0deg);
+
+
   }
 }

@@ -21,7 +21,7 @@
      document.getElementById("favContainer").style.width = "0px";
      document.getElementById("favContainer").style.height = "0%";
      document.getElementById("favContainer").style.padding = "0px";
-
+     document.getElementById("arrow").style.animation = "revrote 0.5s forwards";
  }
 
  function storeValues(form) {
@@ -142,8 +142,12 @@
          document.getElementById("favContainer").style.width = "300px";
          document.getElementById("favContainer").style.height = "100%";
          document.getElementById("favContainer").style.padding = "42px 55px 45px 55px";
+
+         document.getElementById("arrow").style.animation = "rote 0.5s forwards";
+
      } else {
          closeFavourites()
+
 
      }
  }

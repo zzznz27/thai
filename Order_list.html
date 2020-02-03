@@ -14,7 +14,7 @@
 	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="/vendor/animate/animate.css">
 	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="/vendor/css-hamburgers/hamburgers.min.css">
+	<!-- <link rel="stylesheet" type="text/css" href="/vendor/css-hamburgers/hamburgers.min.css"> -->
 	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="/vendor/animsition/css/animsition.min.css">
 	<!--===============================================================================================-->
@@ -25,24 +25,29 @@
 	<link rel="stylesheet" type="text/css" href="/css/util.css">
 	<link rel="stylesheet" type="text/css" href="/css/main.css">
 	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/css/nav.css">
 
 
 	<!--===============================================================================================-->
 </head>
 
 <body id="body">
-	<div class="topnav">
-		<a href="index.html">Home</a>
-		<a href="Menu.html">Menu</a>
-		<a class="active" href="Order_list.html">Orders</a>
-		<a href="Payment.html">Payment Details</a>
 
-		<!-- <a href="#about">About</a> -->
-	</div>
 
 	<div class="container-contact100">
 
 
+		<label>
+			<input type='checkbox'>
+			<span class='menu'> <span class='hamburger'></span> </span>
+			<ul>
+				<li> <a href='/index.html'>Home</a> </li>
+				<li> <a href='/Menu.html'>Menu</a> </li>
+				<li> <a href='/Order_list.html'>Orders</a> </li>
+				<li> <a href='/Payment.html'>Payment Info</a> </li>
+
+			</ul>
+		</label>
 
 		<div class="container-contact100">
 
@@ -56,21 +61,8 @@
 				</div>
 			</div>
 			<div class="break"></div>
-
-			<div class="wrap-contact200" id="orderList">
-
-
-			</div>
-
-
-
+			<div class="wrap-contact200" id="orderList"></div>
 		</div>
-
-
-
-
-
-
 		<div id="dropDownSelect1"></div>
 		<!--===============================================================================================-->
 		<script src="/vendor/jquery/jquery-3.2.1.min.js"></script>
