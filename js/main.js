@@ -187,9 +187,15 @@
      if (drink = getCookie("drink")) document.forms[0].drink.value = document.getElementsByClassName("select2-selection__rendered")[5].innerHTML = drink;
 
      if (notes = getCookie("notes")) document.forms[0].message.value = notes;
-     if (getCookie("spicy") === "true") document.forms[0].spicy.checked = true;
-     if (getCookie("meat") === "true") document.forms[0].meat.checked = true;
 
+     if (getCookie("spicy") === "true") document.forms[0].spicy.checked = true;
+     else {
+         document.forms[0].spicy.checked = false;
+     }
+     if (getCookie("meat") === "true") document.forms[0].meat.checked = true;
+     else {
+         document.forms[0].meat.checked = false;
+     }
 
 
      closeFavourites()
