@@ -1,283 +1,271 @@
 <!DOCTYPE html>
 <html lang="en">
 
-	<head>
-		<title>Thai order</title>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<!--===============================================================================================-->
-		<link rel="icon" type="image/png" href="/images/icons/favicon.ico" />
-		<!--===============================================================================================-->
-		<link rel="stylesheet" type="text/css"
-			href="/vendor/bootstrap/css/bootstrap.min.css">
-		<!--===============================================================================================-->
-		<link rel="stylesheet" type="text/css"
-			href="/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-		<!--===============================================================================================-->
-		<link rel="stylesheet" type="text/css" href="/vendor/animate/animate.css">
-		<!--===============================================================================================-->
-		<!-- <link rel="stylesheet" type="text/css" href="/vendor/css-hamburgers/hamburgers.min.css"> -->
-		<!--===============================================================================================-->
-		<link rel="stylesheet" type="text/css"
-			href="/vendor/animsition/css/animsition.min.css">
-		<!--===============================================================================================-->
-		<link rel="stylesheet" type="text/css" href="/vendor/select2/select2.min.css">
-		<!--===============================================================================================-->
-		<link rel="stylesheet" type="text/css"
-			href="/vendor/daterangepicker/daterangepicker.css">
-		<!--===============================================================================================-->
-		<link rel="stylesheet" type="text/css" href="/css/util.css">
-		<link rel="stylesheet" type="text/css" href="/css/main.css">
-		<!--===============================================================================================-->
-		<link rel="stylesheet" type="text/css" href="/css/nav.css">
-		<link rel="stylesheet" type="text/css" href="/css/checked.css">
-		<!--===============================================================================================-->
-	</head>
+<head>
+	<title>Thai order</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="/images/icons/favicon.ico" />
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/vendor/bootstrap/css/bootstrap.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/vendor/animate/animate.css">
+	<!--===============================================================================================-->
+	<!-- <link rel="stylesheet" type="text/css" href="/vendor/css-hamburgers/hamburgers.min.css"> -->
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/vendor/animsition/css/animsition.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/vendor/select2/select2.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/vendor/daterangepicker/daterangepicker.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/css/util.css">
+	<link rel="stylesheet" type="text/css" href="/css/main.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/css/nav.css">
+	<link rel="stylesheet" type="text/css" href="/css/checked.css">
+	<!--===============================================================================================-->
+</head>
 
-	<body onload="onLoad()">
+<body onload="onLoad()">
 
 
 
-		<div class="container-contact100">
+	<div class="container-contact100">
 
-			<label>
-				<input type='checkbox'>
-				<span class='menu'> <span class='hamburger'></span> </span>
-				<ul>
-					<li> <a href='/index.html'>Home</a> </li>
-					<li> <a href='/Menu.html'>Menu</a> </li>
-					<li> <a href='/Order_list.html'>Orders</a> </li>
-					<li> <a href='/Payment.html'>Payment Info</a> </li>
-					<li> <a href='/analytics.html'>Analytics</a> </li>
+		<label>
+			<input type='checkbox'>
+			<span class='menu'> <span class='hamburger'></span> </span>
+			<ul>
+				<li> <a href='/index.html'>Home</a> </li>
+				<li> <a href='/Menu.html'>Menu</a> </li>
+				<li> <a href='/Order_list.html'>Orders</a> </li>
+				<li> <a href='/Payment.html'>Payment Info</a> </li>
+				<li> <a href='/analytics.html'>Analytics</a> </li>
 
 
-				</ul>
-			</label>
+			</ul>
+		</label>
 
-			<div class="wrap-contact100" id="formContainer" style="display: none;">
-				<!--Dispplay set to none for animation -->
-				<button class="last" style="font-size: small; float: right; width:65px;
-					margin-top: 0px;"
-					onclick="showFavourites()">
-					<img class="arrow" id="arrow" src="/images/icons/arrow.png" style="width:
-						25px;height: 25px;"
-						alt="Previous orders"></button>
+		<div class="wrap-contact100" id="formContainer" style="display: none;">
+			<!--Dispplay set to none for animation -->
+			<button class="last" style="font-size: small; float: right; width:65px;
+					margin-top: 0px;" onclick="showFavourites()">
+				<img class="arrow" id="arrow" src="/images/icons/arrow.png" style="width:
+						25px;height: 25px;" alt="Previous orders"></button>
 
 
 
 
-				<form class="contact100-form validate-form" action="/order" method="POST"
-					id="form">
+			<form class="contact100-form validate-form" action="/order" method="POST" id="form">
 
-					<span class="contact100-form-title">
-						<h2>Thai Order Form</h2>
-					</span>
+				<span class="contact100-form-title">
+					<h2>Thai Order Form</h2>
+				</span>
 
 
-					<div class="wrap-input100 validate-input" data-validate="Name is required">
-						<span class="label-input100">Your Name</span>
-						<input class="input100" type="text" name="name"
-							placeholder="Enter your name">
-						<span class="focus-input100"></span>
+				<div class="wrap-input100 validate-input" data-validate="Name is required">
+					<span class="label-input100">Your Name</span>
+					<input class="input100" type="text" name="name" placeholder="Enter your name">
+					<span class="focus-input100"></span>
+				</div>
+				<div class="wrap-input100 input100-select">
+					<span class="label-input100">Filling</span>
+					<div>
+						<select class="selection-2" name="filling">
+							<option>Select Option</option>
+							<option id="Vegetable">Vegetable</option>
+							<option id="Chicken">Chicken</option>
+							<option id="Beef">Beef</option>
+							<option id="Combination Chicken & Beef">Combination</option>
+							<option id="BBQ Pork">BBQ Pork</option>
+							<option id="Cripsy Pork">Cripsy Pork</option>
+							<option id="Duck">Duck</option>
+							<option id="Prawns">Prawns</option>
+							<option id="Seafood">Seafood</option>
+						</select>
 					</div>
-					<div class="wrap-input100 input100-select">
-						<span class="label-input100">Filling</span>
-						<div>
-							<select class="selection-2" name="filling">
-								<option>Select Option</option>
-								<option id="Vegetable">Vegetable</option>
-								<option id="Chicken">Chicken</option>
-								<option id="Beef">Beef</option>
-								<option id="Combination Chicken & Beef">Combination</option>
-								<option id="BBQ Pork">BBQ Pork</option>
-								<option id="Cripsy Pork">Cripsy Pork</option>
-								<option id="Duck">Duck</option>
-								<option id="Prawns">Prawns</option>
-								<option id="Seafood">Seafood</option>
-							</select>
-						</div>
-						<span class="focus-input100"></span>
-					</div>
+					<span class="focus-input100"></span>
+				</div>
 
-					<div class="wrap-input100 input100-select">
-						<span class="label-input100">Dish type</span>
-						<div>
-							<select class="selection-2" name="dishType" id="dish" data-validate="Dish
-								is required"
-								onChange="changeDish()">
-								<option>Select Option</option>
-								<option>Noodle</option>
-								<option>Curry</option>
-								<option>StirFry</option>
-							</select>
-						</div>
-						<span class="focus-input100"></span>
+				<div class="wrap-input100 input100-select">
+					<span class="label-input100">Dish type</span>
+					<div>
+						<select class="selection-2" name="dishType" id="dish" data-validate="Dish
+								is required" onChange="changeDish()">
+							<option>Select Option</option>
+							<option>Noodle</option>
+							<option>Curry</option>
+							<option>StirFry</option>
+						</select>
 					</div>
-					<div class="wrap-input100 input100-select" id="noodle">
-						<span class="label-input100">Noodles</span>
-						<div>
-							<select class="selection-2" name="DishNoodle" id="DishNoodle">
-								<option>Select Option</option>
-								<option>Pad Thai</option>
-								<option>Pad See Iw</option>
-								<option>Chilli Basil Noodle</option>
-								<option>Cashew Nut Noodle</option>
-								<option>Pad Ba-Mee</option>
-								<option>Hokkien Noodle</option>
-								<option>Garlic & Ginger Noodle</option>
-								<option>Satay Noodle</option>
-								<option>Singapre Noodle</option>
-							</select>
-						</div>
+					<span class="focus-input100"></span>
+				</div>
+				<div class="wrap-input100 input100-select" id="noodle">
+					<span class="label-input100">Noodles</span>
+					<div>
+						<select class="selection-2" name="DishNoodle" id="DishNoodle">
+							<option>Select Option</option>
+							<option>Pad Thai</option>
+							<option>Pad See Iw</option>
+							<option>Chilli Basil Noodle</option>
+							<option>Cashew Nut Noodle</option>
+							<option>Pad Ba-Mee</option>
+							<option>Hokkien Noodle</option>
+							<option>Garlic & Ginger Noodle</option>
+							<option>Satay Noodle</option>
+							<option>Singapre Noodle</option>
+						</select>
 					</div>
-					<div class="wrap-input100 input100-select" id="curry">
-						<span class="label-input100">Curry</span>
-						<div>
-							<select class="selection-2" name="DishCurry" id="DishCurry">
-								<option>Select Option</option>
-								<option>Thai Green Curry</option>
-								<option>Thai Red Curry</option>
-								<option>Panang Curry</option>
-							</select>
-						</div>
+				</div>
+				<div class="wrap-input100 input100-select" id="curry">
+					<span class="label-input100">Curry</span>
+					<div>
+						<select class="selection-2" name="DishCurry" id="DishCurry">
+							<option>Select Option</option>
+							<option>Thai Green Curry</option>
+							<option>Thai Red Curry</option>
+							<option>Panang Curry</option>
+						</select>
 					</div>
-					<div id="stirfry" class="wrap-input100 input100-select">
-						<span class="label-input100">StirFry</span>
-						<div>
-							<select class="selection-2" name="DishStirfry" id="DishStirfry">
-								<option>Select Option</option>
-								<option>Oyster Sauce</option>
-								<option>Garlic Sauce</option>
-								<option>Ginger Sauce</option>
-								<option>Peanut Sauce</option>
-								<option>Chilli Basil Sauce</option>
-								<option>Cashew Nut Sauce</option>
-								<option>Fried Rice</option>
-								<option>Chilli Fried Rice</option>
-							</select>
-						</div>
+				</div>
+				<div id="stirfry" class="wrap-input100 input100-select">
+					<span class="label-input100">StirFry</span>
+					<div>
+						<select class="selection-2" name="DishStirfry" id="DishStirfry">
+							<option>Select Option</option>
+							<option>Oyster Sauce</option>
+							<option>Garlic Sauce</option>
+							<option>Ginger Sauce</option>
+							<option>Peanut Sauce</option>
+							<option>Chilli Basil Sauce</option>
+							<option>Cashew Nut Sauce</option>
+							<option>Fried Rice</option>
+							<option>Chilli Fried Rice</option>
+						</select>
 					</div>
+				</div>
 
-					<div id="drink" class="wrap-input100 input100-select validate-input"
-						data-validate="Drink is required">
-						<span class="label-input100">Drink</span>
-						<div>
-							<select class="selection-2" name="drink">
-								<option>Select Option</option>
-								<option>Coke Zero</option>
-								<option>Coke</option>
-								<option>Water</option>
-								<option>Fanta</option>
-								<option>Lemonade</option>
-							</select>
-						</div>
+				<div id="drink" class="wrap-input100 input100-select validate-input" data-validate="Drink is required">
+					<span class="label-input100">Drink</span>
+					<div>
+						<select class="selection-2" name="drink">
+							<option>Select Option</option>
+							<option>Coke Zero</option>
+							<option>Coke</option>
+							<option>Water</option>
+							<option>Fanta</option>
+							<option>Lemonade</option>
+						</select>
 					</div>
+				</div>
 
-					<table cellpadding="5" style="width: 100%; margin-bottom: 10px;">
-						<tr>
-							<td align="center">
-								<label class="toggleButton">
-									<p>Extra Spicy</p>
-									<input type="checkbox" value="spicy" id="spicy" name="spicy">
-									<div>
-										<svg viewBox="0 0 44 44">
-											<path
-												d="M14,24 L21,31 L39.7428882,11.5937758 C35.2809627,6.53125861
+				<table cellpadding="5" style="width: 100%;">
+					<tr>
+						<td align="center">
+							<label class="toggleButton">
+
+								<input type="checkbox" value="spicy" id="spicy" name="spicy">
+								<div>
+									<svg viewBox="0 0 44 44">
+										<path d="M14,24 L21,31 L39.7428882,11.5937758 C35.2809627,6.53125861
 												30.0333333,4 24,4 C12.95,4 4,12.95 4,24 C4,35.05 12.95,44 24,44
 												C35.05,44 44,35.05 44,24 C44,19.3 42.5809627,15.1645919
-												39.7428882,11.5937758"
-												transform="translate(-2.000000, -2.000000)"></path>
-										</svg>
-									</div>
-								</label>
+												39.7428882,11.5937758" transform="translate(-2.000000, -2.000000)"></path>
+									</svg>
+								</div>
+								<p>Extra Spicy</p>
+							</label>
 
-								<td align="center"> <label class="toggleButton">
-										<p>Extra Meat</p>
-										<input type="checkbox" value="meat" id="meat" name="meat">
-										<div>
-											<svg viewBox="0 0 44 44">
-												<path
-													d="M14,24 L21,31 L39.7428882,11.5937758 C35.2809627,6.53125861
+						<td align="center"> <label class="toggleButton">
+
+								<input type="checkbox" value="meat" id="meat" name="meat">
+								<div>
+									<svg viewBox="0 0 44 44">
+										<path d="M14,24 L21,31 L39.7428882,11.5937758 C35.2809627,6.53125861
 													30.0333333,4 24,4 C12.95,4 4,12.95 4,24 C4,35.05 12.95,44 24,44
 													C35.05,44 44,35.05 44,24 C44,19.3 42.5809627,15.1645919
-													39.7428882,11.5937758"
-													transform="translate(-2.000000, -2.000000)"></path>
-											</svg>
-										</div>
-									</label>
-								</td>
-							</tr>
+													39.7428882,11.5937758" transform="translate(-2.000000, -2.000000)"></path>
+									</svg>
+								</div>
+								<p>Extra Meat</p>
+							</label>
+						</td>
+					</tr>
 
-						</table>
-
-
-
-						<span class="focus-input100"></span>
-						<div class="wrap-input100 validate-input">
-							<span class="label-input100">Special requirements</span>
-							<textarea class="input100" name="message" styles="resize: none;"
-								placeholder="Your message here..."></textarea>
-							<span class="focus-input100"></span>
-						</div>
+				</table>
 
 
-						<div class="container-contact100-form-btn">
-							<div class="wrap-contact100-form-btn">
-								<div class="contact100-form-bgbtn"></div>
-								<button class="contact100-form-btn">
-									<span>
-										Submit
-										<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
-									</span>
-								</button>
-							</div>
-						</div>
-					</form>
+
+				<span class="focus-input100"></span>
+				<div class="wrap-input100 validate-input">
+					<span class="label-input100">Special requirements</span>
+					<textarea class="input100" name="message" styles="resize: none;"
+						placeholder="Your message here..."></textarea>
+					<span class="focus-input100"></span>
 				</div>
 
 
-				<!-- Favourites container  -->
-				<div class="wrap-contact100 favorite-container" id="favContainer">
-					<h3>Last Order</h3>
-					<p id="order-list">
-
-
-					</p>
-					<button class=last onclick="loadCookie()">Load last</button>
-
+				<div class="container-contact100-form-btn">
+					<div class="wrap-contact100-form-btn">
+						<div class="contact100-form-bgbtn"></div>
+						<button class="contact100-form-btn">
+							<span>
+								Submit
+								<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+							</span>
+						</button>
+					</div>
 				</div>
+			</form>
+		</div>
 
-			</div>
 
+		<!-- Favourites container  -->
+		<div class="wrap-contact100 favorite-container" id="favContainer">
+			<h3>Last Order</h3>
+			<p id="order-list">
+
+
+			</p>
+			<button class=last onclick="loadCookie()">Load last</button>
 
 		</div>
 
-		<div id="dropDownSelect1"></div>
-		<!--===============================================================================================-->
-		<script src="/vendor/jquery/jquery-3.2.1.min.js"></script>
-		<!--===============================================================================================-->
-		<script src="/vendor/animsition/js/animsition.min.js"></script>
-		<!--===============================================================================================-->
-		<script src="/vendor/bootstrap/js/popper.js"></script>
-		<script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
-		<!--===============================================================================================-->
-		<script src="/vendor/select2/select2.min.js"></script>
-		<script>
+	</div>
+
+
+	</div>
+
+	<div id="dropDownSelect1"></div>
+	<!--===============================================================================================-->
+	<script src="/vendor/jquery/jquery-3.2.1.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="/vendor/animsition/js/animsition.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="/vendor/bootstrap/js/popper.js"></script>
+	<script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="/vendor/select2/select2.min.js"></script>
+	<script>
 		$(".selection-2").select2({
 			minimumResultsForSearch: 20,
 			dropdownParent: $('#dropDownSelect1')
 		});
 	</script>
-		<!--===============================================================================================-->
-		<script src="/vendor/daterangepicker/moment.min.js"></script>
-		<script src="/vendor/daterangepicker/daterangepicker.js"></script>
-		<!--===============================================================================================-->
-		<script src="/vendor/countdowntime/countdowntime.js"></script>
-		<!--===============================================================================================-->
-		<script src="/js/main.js"></script>
+	<!--===============================================================================================-->
+	<script src="/vendor/daterangepicker/moment.min.js"></script>
+	<script src="/vendor/daterangepicker/daterangepicker.js"></script>
+	<!--===============================================================================================-->
+	<script src="/vendor/countdowntime/countdowntime.js"></script>
+	<!--===============================================================================================-->
+	<script src="/js/main.js"></script>
 
-		<!-- Global site tag (gtag.js) - Google Analytics -->
+	<!-- Global site tag (gtag.js) - Google Analytics -->
 
-	</body>
+</body>
 
 </html>

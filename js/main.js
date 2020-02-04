@@ -39,6 +39,8 @@
 
      }
      setCookie("drink", form.drink.value);
+     setCookie("spicy", form.spicy.checked);
+     setCookie("meat", form.meat.checked);
      setCookie("notes", form.message.value);
      return true;
  }
@@ -106,9 +108,11 @@
      let dish = getCookie("dish");
      let drink = getCookie("drink");
      let dishType = getCookie("dishType");
-     let notes = getCookie("notes");
+     let notes = ((getCookie("notes") != null) ? getCookie("notes") : '');
+     let spicy = ((getCookie("spicy") === "true") ? '👍' : '👎');
+     let meat = ((getCookie("meat") === "true") ? '👍' : '👎');
 
-
+     console.log(document.cookie)
 
 
      document.getElementById("order-list").innerHTML = "<table>" +
@@ -126,6 +130,12 @@
 
          "<tr><td><strong>Drink:</strong></td>" +
          "<td>" + drink + "</td></tr>" +
+
+         "<tr><td><strong>Spicy:</strong></td>" +
+         "<td>" + spicy + "</td></tr>" +
+
+         "<tr><td><strong>Extra Meat:</strong></td>" +
+         "<td>" + meat + "</td></tr>" +
 
          "<tr><td><strong>Notes:</strong></td>" +
          "<td>" + notes + "</td></tr>" +
@@ -177,6 +187,10 @@
      if (drink = getCookie("drink")) document.forms[0].drink.value = document.getElementsByClassName("select2-selection__rendered")[5].innerHTML = drink;
 
      if (notes = getCookie("notes")) document.forms[0].message.value = notes;
+     if (getCookie("spicy") === "true") document.forms[0].spicy.checked = true;
+     if (getCookie("meat") === "true") document.forms[0].meat.checked = true;
+
+
 
      closeFavourites()
 
