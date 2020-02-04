@@ -249,6 +249,7 @@
              document.getElementById("favContainer").style.padding = "0px";
              storeValues(document.forms[0]);
 
+
          }
 
 

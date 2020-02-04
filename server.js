@@ -14,6 +14,7 @@ var bodyParser = require('body-parser');
 // Used to delay while awaiting animation to finish
 function sleep(ms) {
     return new Promise((resolve) => {
+        console.log("Waiting " + ms + " milliseconds...");
         setTimeout(resolve, ms);
     });
 }
@@ -38,7 +39,7 @@ app.use(express.static(__dirname + '/'));
 
 
 
-app.post('/order', function (req, res) {
+app.post('/order', async function (req, res) {
     let date_ob = new Date();
     let date = ("0" + date_ob.getDate()).slice(-2);
     let month = ("0" + (date_ob.getMonth() + 1)).slice(-2);
@@ -50,12 +51,12 @@ app.post('/order', function (req, res) {
     // current seconds
     let seconds = date_ob.getSeconds();
     var jsonObject = JSON.stringify(req.body);
-    console.log(jsonObject)
+    // console.log(jsonObject)
 
-    console.log('Order Recieved')
-    let time = hours + ":" + minutes + ":" + seconds + "  " + date + "-" + month + "-" + year
-    console.log(hours + ":" + minutes + ":" + seconds + "  " + date + "-" + month + "-" + year);
-    console.log(typeof req.body.filling)
+    // console.log('Order Recieved')
+    // let time = hours + ":" + minutes + ":" + seconds + "  " + date + "-" + month + "-" + year
+    // console.log(hours + ":" + minutes + ":" + seconds + "  " + date + "-" + month + "-" + year);
+    // console.log(typeof req.body.filling)
 
     let dish = "";
     if (req.body.DishNoodle != "Select Option") {
@@ -69,16 +70,16 @@ app.post('/order', function (req, res) {
     }
     let spicy = "";
     if (req.body.spicy != null) {
-        spicy = 'spicy'
+        spicy = 'Spicy'
     }
     let meat = "";
     if (req.body.meat != null) {
-        meat = 'extra meat'
+        meat = 'Extra Meat'
     }
-    console.log('meat:' + meat);
+    // console.log('meat:' + meat);
 
 
-    console.log('Dish: ' + dish);
+    // console.log('Dish: ' + dish);
 
     // Calculate Price
     let price = 0;
@@ -96,7 +97,7 @@ app.post('/order', function (req, res) {
         price = price + 15;
     }
 
-    console.log('Price is : ' + price);
+    // console.log('Price is : ' + price);
 
     let order = {
         name: req.body.name,
@@ -113,15 +114,18 @@ app.post('/order', function (req, res) {
 
     con.query(query, order, function (err, result) {
         if (err) throw err;
-        console.log("1 record inserted");
+        // console.log("1 record inserted");
     });
 
     //res.query = 'test';
 
 
     var string = '?price=' + price;
+
+    await sleep(1000);
+
     res.redirect('/OrderPlaced.html' + string);
-    console.log(string);
+    // console.log(string);
 });
 
 app.get('/', function (req, res) {
@@ -143,8 +147,8 @@ app.get('/pendingpayments', function (req, res) {
     var query = "SELECT * FROM orders WHERE paid = 'n'"
     con.query(query, function (err, result) {
         if (err) throw err;
-        console.log(result);
-        console.log("Record produced");
+        // console.log(result);
+        // console.log("Record produced");
         var myJSON = JSON.stringify(result);
         res.send(result);
     });
