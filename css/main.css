@@ -654,6 +654,7 @@ textarea.input100 {
   white-space: nowrap;
   margin-top: 20px;
   width: 100%;
+  text-transform: capitalize;
 }
 
 .arrow {
