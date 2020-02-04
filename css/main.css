@@ -249,7 +249,7 @@ iframe {
   color: #333333;
   line-height: 1.2;
   text-align: center;
-  padding-bottom: 44px;
+  padding-bottom: 15px;
 }
 
 
@@ -702,6 +702,10 @@ div#orderList {
   height: 0;
 }
 
+
+.checkContainer {
+  padding: 15px;
+}
 
 /* 
 @media only screen and (min-height: 700px) {
