@@ -87,7 +87,7 @@ app.post('/order', async function (req, res) {
         price = price + 2;
 
     }
-    if (req.body.filling == 'Vegetable' || req.body.filling == 'Chicken' || req.body.filling == 'beef') {
+    if (req.body.filling == 'Vegetable' || req.body.filling == 'Chicken' || req.body.filling == 'Beef') {
         price = price + 10;
     }
     if (req.body.filling == 'Combination' || req.body.filling == 'BBQ Pork' || req.body.filling == 'Crispy Pork') {
